@@ -6,15 +6,17 @@ A demo project showcasing frontend-backend communication using Next.js and FastA
 
 ```
 next-frontend-backend-zc/
-├── backend/              # FastAPI backend
-│   ├── main.py          # API endpoints
-│   └── requirements.txt # Python dependencies
-├── src/app/             # Next.js frontend (App Router)
-│   ├── layout.tsx       # Root layout
-│   ├── page.tsx         # Main page with API calls
-│   └── globals.css      # Styles
-├── package.json         # Node.js dependencies
-└── next.config.js       # Next.js configuration
+├── frontend/                # Next.js frontend
+│   ├── src/app/             # App Router pages
+│   │   ├── layout.tsx       # Root layout
+│   │   ├── page.tsx         # Main page with API calls
+│   │   └── globals.css      # Styles
+│   ├── package.json         # Node.js dependencies
+│   ├── next.config.js       # Next.js configuration
+│   └── tsconfig.json        # TypeScript configuration
+├── backend/                 # FastAPI backend
+│   ├── main.py              # API endpoints
+│   └── requirements.txt     # Python dependencies
 ```
 
 ## Setup
@@ -41,7 +43,8 @@ The backend will be available at http://localhost:8000
 ### Frontend (Next.js)
 
 ```bash
-# From the project root directory
+# Navigate to frontend directory
+cd frontend
 
 # Install dependencies
 npm install
@@ -82,6 +85,7 @@ uvicorn main:app --reload --port 8000
 
 **Terminal 2 - Frontend:**
 ```bash
+cd frontend
 npm run dev
 ```
 
